@@ -4,67 +4,31 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Concesionaria AutoPlus</title>
-  <link rel="stylesheet" href="../Estilo/style.css" />
+  <link rel="stylesheet" href="Estilo/Style.css" />
 </head>
 <body>
 
   <header>
-    <nav>
-      <ul class="navbar">
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#autos">Autos</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
-    </nav>
-    <h1>Concesionaria AutoPlus</h1>
+    <h1 class = "Center"> Tienda Fernan Motos y Repuestos </h1>
   </header>
+  <section class="banda-productos">
+  <div class="banda-contenedor">
+    <!-- Solo cambia la ruta en src -->
+    <img src="Img/producto1.jfif" alt="Producto 1">
+    <img src="Img/producto1.jfif" alt="Producto 2">
+    <img src="Img/producto1.jfif" alt="Producto 3">
+    <img src="Img/producto1.jfif" alt="Producto 4">
+    <img src="Img/producto1.jfif" alt="Producto 5">
+    
+    <!-- Repetimos para que se vea continuo -->
+    <img src="Img/producto1.jfif" alt="Producto 1">
+    <img src="Img/producto1.jfif" alt="Producto 2">
+    <img src="Img/producto1.jfif" alt="Producto 3">
+    <img src="Img/producto1.jfif" alt="Producto 4">
+    <img src="Img/producto1.jfif" alt="Producto 5">
+  </div>
+</section>
 
-  <main>
-    <section id="autos">
-      <h2>Autos Destacados</h2>
-      <div class="autos-lista">
-        <article class="auto-card">
-          <div class="auto-imagen"> <!-- Aquí agregarás la imagen -->
-            <!-- Ejemplo: <img src="img/auto1.jpg" alt="Auto Modelo X"> -->
-          </div>
-          <h3>Auto Modelo X</h3>
-          <p>Descripción breve del auto, características y ventajas.</p>
-          <button>Ver detalles</button>
-          <button>Solicitar cotización</button>
-        </article>
-
-        <article class="auto-card">
-          <div class="auto-imagen"></div>
-          <h3>Auto Modelo Y</h3>
-          <p>Descripción breve del auto, características y ventajas.</p>
-          <button>Ver detalles</button>
-          <button>Solicitar cotización</button>
-        </article>
-
-        <!-- Puedes duplicar estos artículos para más autos -->
-      </div>
-    </section>
-
-    <section id="contacto">
-      <h2>Contáctanos</h2>
-      <form>
-        <label for="nombre">Nombre completo:</label><br />
-        <input type="text" id="nombre" name="nombre" required /><br />
-
-        <label for="email">Correo electrónico:</label><br />
-        <input type="email" id="email" name="email" required /><br />
-
-        <label for="mensaje">Mensaje:</label><br />
-        <textarea id="mensaje" name="mensaje" rows="4" required></textarea><br />
-
-        <button type="submit">Enviar</button>
-      </form>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025 Concesionaria AutoPlus - Todos los derechos reservados</p>
-  </footer>
 
 </body>
 </html>
