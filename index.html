@@ -1,34 +1,70 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Tienda Online</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Concesionaria AutoPlus</title>
+  <link rel="stylesheet" href="../Estilo/style.css" />
 </head>
 <body>
+
   <header>
-    <h1>Tienda Online</h1>
     <nav>
-      <a href="#">Inicio</a>
-      <a href="#">Productos</a>
-      <a href="#">Contacto</a>
+      <ul class="navbar">
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#autos">Autos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
     </nav>
+    <h1>Concesionaria AutoPlus</h1>
   </header>
 
   <main>
-    <section class="productos">
-      <article class="producto">
-        <img src="img/producto1.jpg" alt="Producto 1">
-        <h2>Producto 1</h2>
-        <p>Descripción breve</p>
-        <p>$10.00</p>
-      </article>
-      <!-- Agrega más productos si quieres -->
+    <section id="autos">
+      <h2>Autos Destacados</h2>
+      <div class="autos-lista">
+        <article class="auto-card">
+          <div class="auto-imagen"> <!-- Aquí agregarás la imagen -->
+            <!-- Ejemplo: <img src="img/auto1.jpg" alt="Auto Modelo X"> -->
+          </div>
+          <h3>Auto Modelo X</h3>
+          <p>Descripción breve del auto, características y ventajas.</p>
+          <button>Ver detalles</button>
+          <button>Solicitar cotización</button>
+        </article>
+
+        <article class="auto-card">
+          <div class="auto-imagen"></div>
+          <h3>Auto Modelo Y</h3>
+          <p>Descripción breve del auto, características y ventajas.</p>
+          <button>Ver detalles</button>
+          <button>Solicitar cotización</button>
+        </article>
+
+        <!-- Puedes duplicar estos artículos para más autos -->
+      </div>
+    </section>
+
+    <section id="contacto">
+      <h2>Contáctanos</h2>
+      <form>
+        <label for="nombre">Nombre completo:</label><br />
+        <input type="text" id="nombre" name="nombre" required /><br />
+
+        <label for="email">Correo electrónico:</label><br />
+        <input type="email" id="email" name="email" required /><br />
+
+        <label for="mensaje">Mensaje:</label><br />
+        <textarea id="mensaje" name="mensaje" rows="4" required></textarea><br />
+
+        <button type="submit">Enviar</button>
+      </form>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 Tienda Online</p>
+    <p>© 2025 Concesionaria AutoPlus - Todos los derechos reservados</p>
   </footer>
+
 </body>
 </html>
