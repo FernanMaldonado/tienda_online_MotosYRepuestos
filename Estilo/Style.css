@@ -8,8 +8,22 @@ header {
   background-color: #222;
   color: white;
   padding: 1rem;
-  text-align: center;
 }
+
+.Center {
+  background-color: #222;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  transition: all 0.3s ease; /* Animación suave */
+}
+
+.Center:hover {
+  color: rgb(1, 207, 207);
+  transform: scale(1.5); /* Aumenta el tamaño 50% */
+}
+
 
 nav a {
   color: white;
@@ -36,3 +50,28 @@ footer {
   padding: 1rem;
   margin-top: 20px;
 }
+
+.banda-productos {
+  overflow: hidden;
+  white-space: nowrap;
+  background-color: black;
+  padding: 1rem 0;
+}
+
+.banda-contenedor {
+  display: inline-block;
+  animation: moverBanda 10s linear infinite;
+}
+
+.banda-contenedor img {
+  height: 200px;
+  margin: 0 20px;
+  border: 3px solid white;
+  border-radius: 10px;
+}
+
+@keyframes moverBanda {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
