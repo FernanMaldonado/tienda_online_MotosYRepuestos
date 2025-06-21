@@ -2,12 +2,14 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+ 
 }
 
 header {
   background-color: #222;
   color: white;
   padding: 1rem;
+
 }
 
 .Center {
@@ -16,32 +18,18 @@ header {
   padding: 1rem;
   text-align: center;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  transition: all 0.3s ease; /* Animación suave */
+  transition: all 0.3s ease;
 }
 
 .Center:hover {
   color: rgb(1, 207, 207);
-  transform: scale(1.5); /* Aumenta el tamaño 50% */
+  transform: scale(1.5);
 }
-
 
 nav a {
   color: white;
   margin: 0 10px;
   text-decoration: none;
-}
-
-.productos {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px;
-  padding: 20px;
-}
-
-.producto {
-  border: 1px solid #ccc;
-  padding: 10px;
-  text-align: center;
 }
 
 footer {
@@ -51,27 +39,54 @@ footer {
   margin-top: 20px;
 }
 
+/* Carrusel animado con productos */
 .banda-productos {
   overflow: hidden;
-  white-space: nowrap;
-  background-color: black;
+  background-color: #f8f9fa;
   padding: 1rem 0;
 }
 
 .banda-contenedor {
-  display: inline-block;
-  animation: moverBanda 10s linear infinite;
+  display: flex;
+  animation: moverBanda 30s linear infinite;
+  gap: 30px;
 }
 
-.banda-contenedor img {
-  height: 200px;
-  margin: 0 20px;
+.producto {
+  flex: 0 0 auto;
+  text-align: center;
+  min-width: 150px;
+  transition: transform 0.3s ease; /* transición para el contenedor */
+}
+
+.producto:hover {
+  transform: scale(1.1); /* agranda todo el bloque */
+}
+
+.producto img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
   border: 3px solid white;
   border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.3s ease;
+}
+
+.producto p {
+  margin-top: 8px;
+  font-size: 18px;
+  color: #333;
+  transition: font-size 0.3s ease;
+}
+
+.producto:hover p {
+  font-size: 20px; /* agranda el texto */
+  font-weight: bold;
 }
 
 @keyframes moverBanda {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
-
