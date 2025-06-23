@@ -5,60 +5,117 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Concesionaria AutoPlus</title>
   <link rel="stylesheet" href="Estilo/Style.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" 
-  integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-</head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  </head>
 <body>
 
-  <header>
-    <h1 class = "Center"> Tienda Fernan Motos y Repuestos </h1>
-  </header>
- <section class="banda-productos">
-  <div class="banda-contenedor">
+ <div class = "BarraMenu"><!-- Botón hamburguesa -->
+  <button class="toggle-btn" onclick="toggleMenu()">☰</button>
 
-    <div class="producto">
-      <img src="Img/producto1.jfif" alt="Producto 1">
-      <p>Deportiva CF300</p>
-    </div>
+  <!-- Menú lateral -->
+ <div class="sidebar" id="sidebar">
+  <h2>Opc.</h2>
+  <a href="#inicio">Inicio</a>
+  <a href="#contacto">Contáctanos</a>
+  <a href="#repuestos">Repuestos</a>
 
-    <div class="producto">
-      <img src="Img/producto2.jfif" alt="Producto 2">
-      <p>Pulsar 250cc</p>
-    </div>
+  <details class="submenu">
+    <summary>Motos</summary>
+    <ul>
+      <li><a href="#honda">Honda</a></li>
+      <li><a href="#yamaha">Yamaha</a></li>
+      <li><a href="#suzuki">Suzuki</a></li>
+      <li><a href="#ktm">KTM</a></li>
+    </ul>
+  </details>
 
-    <!-- Repetimos para efecto de carrusel continuo -->
-    <div class="producto">
-      <img src="Img/producto3.jfif" alt="Producto 3">
-      <p>TVS Rider 125</p>
-    </div>
+  <a href="#servicios">Servicios</a>
+</div>
 
-    <div class="producto">
-      <img src="Img/producto4.jfif" alt="Producto 4">
-      <p>Yamaha 3.0 159 SF</p>
-    </div>
 
-    <div class="producto">
-      <img src="Img/producto5.jfif" alt="Producto 5">
-      <p>Italika 250Z Año 2025</p>
-    </div>
+  <!-- Contenido principal -->
+  <div class="main-content">
 
-    <div class="producto">
-      <img src="Img/producto6.jfif" alt="Producto 6">
-      <p>Moto Suzuki</p>
-    </div>
 
-    <div class="producto">
-      <img src="Img/producto7.jfif" alt="Producto 7">
-      <p>Moto Honda</p>
-    </div>
-
+  <div class="left-side">
+    <img src="Img/LogoMoto.png" alt="Logo" style="height: 150px;">
   </div>
-</section>
+  <h1 class="Center">| XF Repuestos y Motos</h1>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" 
-integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" 
-crossorigin="anonymous"></script>
 
+<div class = "banda-arcoiris"></div>
+ <ul class="OpcionesUsuario">
+  <li data-title="Perfil">
+    <img src="https://cdn-icons-png.flaticon.com/512/7531/7531708.png" alt="Perfil">
+  </li>
+  <li data-title="Configuración">
+    <img src="https://images.icon-icons.com/3578/PNG/512/settings_configuration_icon_225724.png" alt="Configuración">
+  </li>
+  <li data-title="Compras">
+    <img src="https://gallery.yopriceville.com/var/albums/Free-Clipart-Pictures/Sale-Stickers-PNG/Shopping_Cart_Icon_PNG_Clipart.png?m=1629814077" alt="Carrito">
+  </li>
+</ul>
+
+
+</div> 
+
+    <section class="banda-productos">
+      <h1 class = "Titulo_Centro"> Productos en Oferta </h1>
+      <div class="banda-contenedor">
+
+        <div class="producto">
+          <img src="Img/producto1.jfif" alt="Producto 1">
+          <p>Deportiva CF300</p>
+        </div>
+
+        <div class="producto">
+          <img src="Img/producto2.jfif" alt="Producto 2">
+          <p>Pulsar 250cc</p>
+        </div>
+
+        <div class="producto">
+          <img src="Img/producto3.jfif" alt="Producto 3">
+          <p>TVS Rider 125</p>
+        </div>
+
+        <div class="producto">
+          <img src="Img/producto4.jfif" alt="Producto 4">
+          <p>Yamaha 3.0 159 SF</p>
+        </div>
+
+        <div class="producto">
+          <img src="Img/producto5.jfif" alt="Producto 5">
+          <p>Italika 250Z Año 2025</p>
+        </div>
+
+        <div class="producto">
+          <img src="Img/producto6.jfif" alt="Producto 6">
+          <p>Moto Suzuki</p>
+        </div>
+
+        <div class="producto">
+          <img src="Img/producto7.jfif" alt="Producto 7">
+          <p>Moto Honda</p>
+        </div>
+
+      </div>
+    </section>
+
+  <!-- Script para abrir/cerrar el menú -->
+  <script>
+    function toggleMenu() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('active');
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+    crossorigin="anonymous"></script>
 
 </body>
 </html>
+
+
