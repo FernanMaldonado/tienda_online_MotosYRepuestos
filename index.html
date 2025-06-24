@@ -12,40 +12,57 @@
 <body>
 
  <div class = "BarraMenu"><!-- Botón hamburguesa -->
-  <button class="toggle-btn" onclick="toggleMenu()">☰</button>
-
+    <button class="toggle-btn" data-title="Opciones" onclick="toggleMenu()">☰</button>
   <!-- Menú lateral -->
  <div class="sidebar" id="sidebar">
   <h2>Opc.</h2>
-  <a href="#inicio">Inicio</a>
-  <a href="#contacto">Contáctanos</a>
-  <a href="#repuestos">Repuestos</a>
+
+  <details class="submenu">
+    <summary>Contactanos</summary>
+    <ul>
+      <li><a href="#tiendas"> Tiendas </a></li>
+      <li><a href="#comentarios"> Comentarios > </a></li>
+    </ul>
+  </details>
 
   <details class="submenu">
     <summary>Motos</summary>
     <ul>
-      <li><a href="#honda">Honda</a></li>
-      <li><a href="#yamaha">Yamaha</a></li>
-      <li><a href="#suzuki">Suzuki</a></li>
-      <li><a href="#ktm">KTM</a></li>
+      <li><a href="#honda"> Honda</a></li>
+      <li><a href="#yamaha"> Yamaha</a></li>
+      <li><a href="#suzuki"> Suzuki</a></li>
+      <li><a href="#ktm"> KTM</a></li>
     </ul>
   </details>
 
-  <a href="#servicios">Servicios</a>
+  <details class="submenu">
+    <summary>Repuestos</summary>
+    <ul>
+      <li><a href="#faros"> Faros</a></li>
+      <li><a href="#retrovisores"> Retrovisores</a></li>
+      <li><a href="#carbuadores"> Carburadores</a></li>
+    </ul>
+  </details>
+
+  <details class="submenu">
+    <summary>Servicios</summary>
+    <ul>
+      <li><a href="#LineaDeTiempo" style = "width: 200px;"> Linea De Tiempo </a></li>
+      <li><a href="#OverHold"> OverHold</a></li>
+      <li><a href="#ServicioMayorYMenor"> Servicio Mayor Y Menor </a></li>
+    </ul>
+  </details>
 </div>
 
 
   <!-- Contenido principal -->
   <div class="main-content">
-
-
   <div class="left-side">
     <img src="Img/LogoMoto.png" alt="Logo" style="height: 150px;">
   </div>
   <h1 class="Center">| XF Repuestos y Motos</h1>
-
-
 <div class = "banda-arcoiris"></div>
+<div class = "banda-arcoiris2"></div>
  <ul class="OpcionesUsuario">
   <li data-title="Perfil">
     <img src="https://cdn-icons-png.flaticon.com/512/7531/7531708.png" alt="Perfil">
@@ -60,7 +77,6 @@
 
 
 </div> 
-
     <section class="banda-productos">
       <h1 class = "Titulo_Centro"> Productos en Oferta </h1>
       <div class="banda-contenedor">
@@ -102,6 +118,42 @@
 
       </div>
     </section>
+
+<div class="slider">
+  <input type="radio" name="radio-btn" id="radio1" checked>
+  <input type="radio" name="radio-btn" id="radio2">
+  <input type="radio" name="radio-btn" id="radio3">
+  <input type="radio" name="radio-btn" id="radio4">
+
+  <div class="slides">
+    <div class="slide">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdBKMm1scKOcbM5QM9q4Lx99H7q_DVkp6eMg&s" alt="Imagen 1">
+      <div class="titulo-imagen">Título 1</div>
+    </div>
+    <div class="slide">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS6i4KYT-ufa6_BPVHfY6Gju6ExjlsrDWK3g&s" alt="Imagen 2">
+      <div class="titulo-imagen">Título 2</div>
+    </div>
+    <div class="slide">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjWQam-G0GT5KwLRH1o56F6sUfwWS3pwo2qg&s" alt="Imagen 3">
+      <div class="titulo-imagen">Título 3</div>
+    </div>
+    <div class="slide">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFJXZNV9477JVhCXqaXwAOW1_ppUqdiSSCeg&s" alt="Imagen 4">
+      <div class="titulo-imagen">Título 4</div>
+    </div>
+  </div>
+
+  <div class="navigation-manual">
+    <label for="radio1" class="manual-btn"></label>
+    <label for="radio2" class="manual-btn"></label>
+    <label for="radio3" class="manual-btn"></label>
+    <label for="radio4" class="manual-btn"></label>
+  </div>
+</div>
+
+
+  <div class = "Espacio"></div>
 
   <!-- Script para abrir/cerrar el menú -->
   <script>
