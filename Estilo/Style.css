@@ -1,31 +1,17 @@
 /* Fuente y reset */
 body {
-  background-color: #143635 !important;
+  background-color: #414141 !important;
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   color: white;
 }
 
-/* Botón hamburguesa */
-.toggle-btn {
-  position: fixed;
-  top: 30px;
-  left: 15px;
-  font-size: 24px;
-  background-color: #2c3e50;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  z-index: 1001;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
+/* Tooltip botón hamburguesa */
 .toggle-btn::after {
   content: attr(data-title);
   position: absolute;
-  bottom: 100%; /* Encima del botón */
+  bottom: 100%;
   left: 50%;
   transform: translateX(-50%) translateY(-7px);
   background-color: rgba(0, 0, 0, 0.8);
@@ -43,13 +29,11 @@ body {
   opacity: 1;
 }
 
-
-
-/* Título principal */
+/* Título central */
 .Titulo_Centro {
-  text-align: center;
-  position: relative;
-  top: -150px;
+  left: 35%;
+  position: absolute;
+  top: 180px;
   font-size: 40px;
   margin-bottom: 30px;
   background-image: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
@@ -75,7 +59,19 @@ body {
   top: 0;
   left: -250px;
   transition: left 0.3s ease;
-  z-index: 1000;
+  z-index: 1200;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #888 #2c3e50;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
 }
 
 .sidebar.active {
@@ -99,7 +95,6 @@ body {
   background-color: #34495e;
 }
 
-/* Contenido principal */
 .main-content {
   margin-left: 0;
   padding: 20px;
@@ -134,7 +129,7 @@ body {
   width: 100px;
   color: white;
   padding: 5px 0;
-  border-radius: 15px ;
+  border-radius: 15px;
   text-decoration: none;
   transition: background 0.3s;
 }
@@ -143,40 +138,190 @@ body {
   background-color: #34495e;
 }
 
-
 header {
   position: relative;
   top: 100px;
   width: 100%;
 }
 
+/* Botón hamburguesa */
+.toggle-btn {
+  position: fixed;
+  top: 30px;
+  left: 15px;
+  font-size: 24px;
+  background-color: #2c3e50;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  z-index: 1300;
+}
+
 /* Logo */
 .left-side {
   position: relative;
-  left: 50px;
-  top: -35px;
+  background-color: #fff;
+  width: 97px;
+  height: 97px;
+  border-radius: 100px;
+  left: 95px;
+  top: -5px;
+  z-index: 1100;
 }
 
-/* Título a la derecha del logo */
+.left-side img {
+  cursor: pointer;
+  width: 120px;
+  height: 120px;
+  position: relative;
+  left: -13px;
+  top: -25px;
+  z-index: 1100;
+}
+
+/* Título de cabecera */
 .Center {
   position: relative;
-  top: -135px;
-  left: 200px;
+  top: -80px;
+  left: 215px;
   font-size: clamp(18px, 4vw, 35px);
   line-height: 1.2;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  transition: all 0.3s ease;
   max-width: calc(100% - 250px);
   white-space: normal;
   overflow-wrap: break-word;
   word-break: break-word;
   background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet, red);
   background-size: 600% 100%;
-  animation: fondo-colore 5s linear infinite;
+  animation: arcoiris-fondo 10s linear infinite;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  z-index: 1100;
 }
 
+/* Contenedor de productos */
+.ProductosImagenes {
+  position: relative;
+  width: 750px;
+  top: 600px;
+  left: 50px;
+}
+
+.Imagen {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.Imagen img {
+  width: 255px;
+  height: 200px;
+  display: block;
+  transition: transform 0.5s ease;
+  cursor: pointer;
+}
+
+.Imagen img:hover {
+  transform: scale(1.2);
+  border-radius: 10px;
+  border-color: #00f7ff;
+}
+
+.Imagen2 {
+  position: absolute;
+  top: 150px;
+  right: 0px;
+}
+
+.Imagen2 img {
+  width: 450px;
+  height: 275px;
+}
+
+.Descripcion {
+  position: absolute;
+  width: 400px;
+  top: 700px;
+  right: 65px;
+}
+
+.Descripcion p {
+  font-size: 20px;
+  color: #ccc;
+}
+
+.contador-container {
+  display: flex;
+  position: absolute;
+  top: 335px;
+  right: 435px;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 50px;
+  font-family: Arial, sans-serif;
+}
+
+.contador-container button {
+  padding: 10px 16px;
+  font-size: 20px;
+  background-color: #2c3e50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.contador-container input {
+  width: 60px;
+  text-align: center;
+  font-size: 20px;
+  padding: 8px;
+  border: 2px solid #2c3e50;
+  border-radius: 5px;
+}
+
+/* Busqueda */
+.Busqueda {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px;
+  position: fixed;
+  top: 25px;
+  right: 27%;
+  z-index: 1201;
+}
+
+.Busqueda input {
+  padding: 10px;
+  font-size: 16px;
+  width: 250px;
+  border-radius: 10px;
+  border: 2px solid #ccc;
+}
+
+.Buscarr {
+  padding: 10px 10px;
+  position: fixed;
+  top: 46.5px;
+  right: 28.75%;
+  font-size: 16px;
+  background: black;
+  border: none;
+  color: white;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  z-index: 1202;
+}
+
+.Busqueda button:hover {
+  transform: scale(1.05);
+}
+
+/* Responsividad */
 @media (max-width: 768px) {
   .Center {
     left: 20px;
@@ -184,111 +329,47 @@ header {
     font-size: clamp(16px, 5vw, 30px);
     text-align: center;
   }
-}
-
-/* Banda de productos */
-.banda-productos {
-  background-color: #143635;
-  padding: 1rem 0;
-  height: 150px;
-  margin-top: 100px;
-}
-
-.banda-contenedor {
-  display: flex;
-  animation: moverBanda 30s linear infinite;
-  gap: 30px;
-  position: relative;
-  top: -150px;
-}
-
-.banda-contenedor:hover {
-  animation-play-state: paused;
-}
-
-.producto {
-  flex: 0 0 auto;
-  text-align: center;
-  min-width: 150px;
-  transition: transform 0.3s ease;
-}
-
-.producto:hover {
-  transform: scale(1.2);
-  z-index: 1;
-}
-
-.producto img {
-  width: 130px;
-  height: 110px;
-  object-fit: cover;
-  border: 3px solid white;
-  border-radius: 10px;
-  display: block;
-  margin: 0 auto;
-  transition: transform 0.3s ease;
-  filter: drop-shadow(12px 12px 4px #605DFF);
-}
-
-.producto p {
-  margin-top: 8px;
-  font-size: 18px;
-  color: #ffffff;
-  transition: font-size 0.3s ease;
-}
-
-.producto:hover p {
-  font-size: 20px;
-  font-weight: bold;
-}
-
-/* Banda arcoíris decorativa */
-.banda-arcoiris {
-  position: absolute;
-  left: 0px;
-  top: 65px;
-  width: 100%;
-  height: 15px;
-  margin-top: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-shadow: 2px 2px 5px black;
-  background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet, red);
-  background-size: 600% 100%;
-  animation: arcoiris-fondo 10s linear infinite;
-}
-
-/* Footer */
-footer {
-  background-color: #f2f2f2;
-  text-align: center;
-  padding: 1rem;
-  margin-top: 20px;
+  .ProductosImagenes, .Descripcion, .Imagen2, .contador-container {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    width: 90%;
+    margin: 20px auto;
+    text-align: center;
+  }
+  .Imagen img, .Imagen2 img {
+    width: 100% !important;
+    height: auto !important;
+  }
+  .contador-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+  .Descripcion p {
+    font-size: 18px;
+  }
+  .left-side, .left-side img {
+    width: 70px;
+    height: 70px;
+    top: -10px;
+    left: 10px;
+  }
+  .Busqueda {
+    right: 5%;
+    top: 100px;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .Buscarr {
+    position: relative;
+    right: auto;
+    top: auto;
+  }
 }
 
 /* Animaciones */
-@keyframes moverBanda {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-@keyframes fondo-colore {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
-}
-
 @keyframes shine-rainbow {
   0% {
     background-position: 0% center;
@@ -307,8 +388,10 @@ footer {
   }
 }
 
+
 .banda-arcoiris2 {
-  position: absolute;
+  z-index: 1200;
+  position: fixed;
   left: 0px;
   top: -55px;
   width: 100%;
@@ -336,20 +419,75 @@ footer {
 }
 
 .BarraMenu {
-  position: absolute;
-  background: #a3b5c7;
+  position: fixed;
+  top: 0;
+  left: 0;
   height: 120px;
   width: 100%;
+  background: #212529;
+  z-index: 1100; /* Z-index alto para que esté encima */
 }
 
 .OpcionesUsuario {
-  position: absolute;
-  top: 45px;
+  position: fixed; /* Esto hace que esté fijo */
+  top: 35px;
   right: 40px;
+  height: 65px;
+  width: 280px;
   display: flex;
-  gap: 15px;
+  justify-content: space-around;
+  align-items: center;
   list-style: none;
+  background-color: #f2f2f2;
+  border-radius: 30px;
+  padding: 0 10px;
+  z-index: 1101;
+  box-sizing: border-box;
+  flex-grow: 1;
+  flex-basis: 200;
 }
+
+/* Borde arcoíris animado */
+.OpcionesUsuario::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 7px;
+  background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet, red);
+  background-size: 600% 100%;
+  border-radius: 30px;
+  z-index: -1;
+  animation: arcoiris-fondo3 10s linear infinite;
+
+  /* Máscara para mostrar solo el borde */
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  box-sizing: border-box;
+}
+
+/* Animación arcoíris */
+@keyframes arcoiris-fondo3 {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+
+
+
 
 .OpcionesUsuario li {
   position: relative;
@@ -364,6 +502,7 @@ footer {
 
 .OpcionesUsuario img:hover {
   transform: scale(1.2);
+  z-index: 1200;
 }
 
 /* Tooltip */
@@ -382,6 +521,7 @@ footer {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
+  z-index: 1300;
 }
 
 .OpcionesUsuario li:hover::after {
@@ -389,19 +529,21 @@ footer {
   transform: translateX(-50%) translateY(-7px); /* Sube 7px */
 }
 
-
-html, body {
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
+/* Cambia esto en tu CSS */
 .slider {
   position: relative;
+  top : 150px ;
+  margin: 60px auto;
   width: 800px;
   height: 400px;
-  margin: 40px auto;
   overflow: hidden;
   border-radius: 10px;
+}
+
+/* Agrega esto al final de tu CSS si no está */
+.EspacioFinal {
+  height: 300px;
+  width: 100%;
 }
 
 .slides {
@@ -471,14 +613,35 @@ input[type="radio"] {
 
 .titulo-imagen {
   position: absolute;
-  right: 30px;
+  right: 100px;
   top: 50%;
   transform: translateY(-50%);
   color: white;
-  font-size: 20px;
+  font-size: 50px;
   font-weight: bold;
   z-index: 2;
-  text-shadow: 100px 100px 15px rgba(0, 0, 0, 100); /* Sombra tipo mancha */
+  filter: drop-shadow(1px 1px 30px rgb(0, 0, 0));
+  max-width: 600px;
+  cursor: pointer;
+  transition: transform 0.4s ease, background 0.4s ease, -webkit-text-fill-color 0.4s ease;
+}
+
+.titulo-imagen:hover {
+  background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet, red);
+  background-size: 600% 100%;
+  animation: fondo-colore4 5s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: scale(1.3);
+}
+
+@keyframes fondo-colore4 {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
 }
 
 .Espacio {
@@ -486,3 +649,153 @@ input[type="radio"] {
   width: 100%;
   bottom: 30px;
 }
+
+#busqueda {
+  padding: 10px;
+  width: 300px;
+  font-size: 16px;
+  border-radius: 20px;
+  border: 2px solid #ccc;
+  outline: none;
+}
+
+#busqueda:focus {
+  border-color: #007bff;
+}
+
+.Busqueda {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px;
+  position: fixed;
+  top :25px;
+  right: 27%;
+  z-index: 1201;
+}
+
+.Busqueda input {
+  padding: 10px;
+  font-size: 16px;
+  width: 250px;
+  border-radius: 10px;
+  border: 2px solid #ccc;
+}
+
+.Buscarr  {
+  padding: 10px 10px;
+  position: fixed;
+  top: 46.5px;
+  right: 28.75%;
+  font-size: 16px;
+  background: black;
+  border: none;
+  color: white;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  z-index: 1202;
+}
+
+.Busqueda button:hover {
+  transform: scale(1.05);
+}
+
+.Ajuste {
+    position: absolute;
+    width: 100%;
+    top: 110px;
+}
+
+.Ajuste img{
+    width: 100%;
+}
+
+.TituloProducto {
+    position: absolute;
+    color: #fff;
+    font-size: 50px;
+    top: 600px;
+    right: 65px  ;
+    z-index: 1099 ;
+}
+
+.ProductosImagenes {
+  position: relative;
+  width: 750px;
+  top: 600px;
+  left: 50px;
+}
+
+.Imagen {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.Imagen img {
+  width: 255px;
+  height: 200px;
+  display: block;
+  transition: transform 0.5s ease;
+  cursor: pointer;
+}
+
+.Imagen img:hover {
+  transform: scale(1.2);
+}
+
+.Imagen2 {
+  position: absolute;
+  top: 150px;
+  right: 0px;
+}
+
+.Imagen2 img {
+  width: 450px;
+  height: 275px;
+}
+
+.Descripcion {
+  position: absolute;
+  width: 400px;
+  top: 700px;
+  right: 65px;
+}
+
+.Descripcion p {
+font-size: 20px;
+color: #ccc;
+}
+
+ .contador-container {
+    display: flex;
+    position: absolute;
+    top :335px;
+    right: 435px;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 50px;
+    font-family: Arial, sans-serif;
+  }
+
+  .contador-container button {
+    padding: 10px 16px;
+    font-size: 20px;
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  .contador-container input {
+    width: 60px;
+    text-align: center;
+    font-size: 20px;
+    padding: 8px;
+    border: 2px solid #2c3e50;
+    border-radius: 5px;
+  }
+
+
