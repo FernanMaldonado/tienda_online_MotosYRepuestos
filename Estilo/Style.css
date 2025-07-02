@@ -184,8 +184,9 @@ header {
 /* Título de cabecera */
 .Center {
   position: relative;
+  width: 35%;
   top: -80px;
-  left: 215px;
+  left: 15%;
   font-size: clamp(18px, 4vw, 35px);
   line-height: 1.2;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -285,30 +286,34 @@ header {
 /* Busqueda */
 .Busqueda {
   display: flex;
+  width: 15%;
   align-items: center;
   gap: 10px;
   margin: 20px;
   position: fixed;
+  right: 10%;
   top: 25px;
-  right: 27%;
   z-index: 1201;
 }
 
 .Busqueda input {
-  padding: 10px;
+  position: fixed;
+  top: 6%;
+  right: 14.3%;
+  padding: 15px;
   font-size: 16px;
-  width: 250px;
-  border-radius: 10px;
+  width: 15%;
+  border-radius: 20px;
   border: 2px solid #ccc;
 }
 
 .Buscarr {
   padding: 10px 10px;
-  position: fixed;
-  top: 46.5px;
+  position: relative;
+  top: 28.5px;
   right: 28.75%;
   font-size: 16px;
-  background: black;
+  background-color: transparent;
   border: none;
   color: white;
   border-radius: 25px;
@@ -322,12 +327,12 @@ header {
 }
 
 /* Responsividad */
-@media (max-width: 768px) {
+@media (max-width: 720px ) {
   .Center {
-    left: 20px;
-    top: -120px;
-    font-size: clamp(16px, 5vw, 30px);
-    text-align: center;
+    font-size: 20px;
+    position: relative;
+    left: 15%;
+    top: 7px;
   }
   .ProductosImagenes, .Descripcion, .Imagen2, .contador-container {
     position: relative;
@@ -350,23 +355,72 @@ header {
   .Descripcion p {
     font-size: 18px;
   }
-  .left-side, .left-side img {
-    width: 70px;
+  .left-side {
+    width: 15%;
     height: 70px;
     top: -10px;
     left: 10px;
+    display: none;
   }
-  .Busqueda {
-    right: 5%;
-    top: 100px;
-    flex-direction: column;
-    gap: 10px;
-  }
-  .Buscarr {
+
+  .Busqueda  {
     position: relative;
-    right: auto;
-    top: auto;
+    width: 100%;
+    right: 27%;
   }
+
+  .Busqueda input {
+    position: relative;
+    width: 150%;
+    right: 25%;
+  }
+
+  .Buscarr{
+   display: none;
+  }
+
+  
+  .Descripcion {
+    position: absolute;
+    width: 400px;
+    top: 300px;
+    right: 65px;
+  }
+
+  .Descripcion p {
+    font-size: 20px;
+    color: #ccc;
+  }
+
+    .TituloProducto {
+    position: absolute;
+    color: #fff;
+    font-size: 50px;
+    top: 100px;
+    right: 65px  ;
+    z-index: 1099 ;
+}
+
+  .Imagen img {
+  width: 50%;
+  height: 200px;
+  display: block;
+  transition: transform 0.5s ease;
+  cursor: pointer;
+}
+
+.Imagen img:hover {
+  transform: scale(1.2);
+}
+
+.Imagen2 {
+  position: absolute;
+  top: 100px;
+  right: 0px;
+  display: none;
+}
+
+
 }
 
 /* Animaciones */
@@ -388,6 +442,44 @@ header {
   }
 }
 
+@media (max-width: 1100px ) {
+   .left-side {
+    width: 15%;
+    height: 70px;
+    top: -10px;
+    left: 10px;
+    display: none;
+  } 
+
+  .Center {
+    font-size: 30px;
+    position: relative;
+    left: 15%;
+    top: 7px;
+  }
+
+  .Imagen2 {
+  position: absolute;
+  top: 100px;
+  right: 0px;
+  display: none;
+}
+
+  .Imagen img {
+
+  width: 50%;
+  height: 200px;
+  display: block;
+  transition: transform 0.5s ease;
+  cursor: pointer;
+  text-align: start;
+}
+  .Descripcion p {
+    text-align: end;
+    font-size: 15px;
+    color: #ccc;
+  }
+}
 
 .banda-arcoiris2 {
   z-index: 1200;
@@ -422,7 +514,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  height: 120px;
+  height: 20%;
   width: 100%;
   background: #212529;
   z-index: 1100; /* Z-index alto para que esté encima */
@@ -433,7 +525,7 @@ header {
   top: 35px;
   right: 40px;
   height: 65px;
-  width: 280px;
+  width: 10%;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -485,17 +577,12 @@ header {
   }
 }
 
-
-
-
-
 .OpcionesUsuario li {
   position: relative;
 }
 
 .OpcionesUsuario img {
-  height: 30px;
-  width: 30px;
+  width: 1.5rem;
   cursor: pointer;
   transition: transform 0.3s ease;
 }
@@ -534,7 +621,7 @@ header {
   position: relative;
   top : 150px ;
   margin: 60px auto;
-  width: 800px;
+  width: 50%;
   height: 400px;
   overflow: hidden;
   border-radius: 10px;
@@ -650,43 +737,27 @@ input[type="radio"] {
   bottom: 30px;
 }
 
-#busqueda {
-  padding: 10px;
-  width: 300px;
-  font-size: 16px;
-  border-radius: 20px;
-  border: 2px solid #ccc;
-  outline: none;
-}
-
 #busqueda:focus {
   border-color: #007bff;
 }
 
 .Busqueda {
+  width: 25%;
+  position: fixed;
+  width: 15%;
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin: 20px;
   position: fixed;
   top :25px;
-  right: 27%;
+  right: 20%;
   z-index: 1201;
-}
-
-.Busqueda input {
-  padding: 10px;
-  font-size: 16px;
-  width: 250px;
-  border-radius: 10px;
-  border: 2px solid #ccc;
 }
 
 .Buscarr  {
   padding: 10px 10px;
   position: fixed;
   top: 46.5px;
-  right: 28.75%;
+  right: 15%;
   font-size: 16px;
   background: black;
   border: none;
@@ -764,15 +835,17 @@ input[type="radio"] {
 }
 
 .Descripcion p {
-font-size: 20px;
-color: #ccc;
+  position: relative;
+  top: 25%;
+  font-size: 20px;
+  color: #ccc;
 }
 
  .contador-container {
     display: flex;
     position: absolute;
-    top :335px;
-    right: 435px;
+    top :435px;
+    right: 55px;
     justify-content: center;
     gap: 10px;
     margin-top: 50px;
@@ -798,4 +871,119 @@ color: #ccc;
     border-radius: 5px;
   }
 
+  /* Banda de productos */
+ 
+.banda-productos {
+  padding: 1rem 0; 
+  margin-top: 100px;
+  }
+   
+  /* Carrusel */
+   
+.banda-contenedor {
+  display: flex;
+  animation: moverBanda 30s linear infinite;
+  gap: 30px;
+  position: relative;
+  top: 150px; 
+  }
+   
+  /* Pausar animación solo al pasar sobre las imágenes */
+   
+  .banda-contenedor:hover {
+  animation-play-state: paused;
+   
+  }
+   
+  .producto {
+  flex: 0 0 auto;
+  text-align: center;
+  min-width: 150px;
+  transition: transform 0.3s ease;
+   
+  }
+   
+  .producto:hover {
+  transform: scale(1.2);
+  z-index: 1;
+   
+  }
+   
+  .producto img {
+  width: 130px;
+  height: 110px;
+  object-fit: cover;
+  border: 3px solid white;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(12px 12px 4px #605DFF);
+   
+  }
+   
+  .producto p {
+  margin-top: 8px;
+  font-size: 18px;
+  color: #ffffff;
+  transition: font-size 0.3s ease;
+   
+  }
+   
+  .producto:hover p {
+  font-size: 20px;
+  font-weight: bold;
+   
+  }
 
+  @keyframes moverBanda {
+ 
+    0% {
+     
+    transform: translateX(0);
+     
+    }
+     
+    100% {
+     
+    transform: translateX(-50%);
+     
+    }
+  }
+
+  @media (max-width: 768px) {
+    /* Estilos para pantallas con un ancho máximo de 768px (tabletas y móviles) */
+    .container {
+        width: 95%;
+    }
+    .sidebar {
+        display: none; /* Ocultar la barra lateral en pantallas pequeñas */
+    }
+}
+
+.footer {
+  background-color: #4f4646;
+  width: 100%;
+  height: 100px;
+}
+
+.footer-contenido {
+    color: #fff;
+   text-align: center;
+}
+
+.ordenar {
+  background-color: red;
+  color :#ffffff ;
+  height: 40px;
+  width: 100px;
+  text-align: center;
+  border-radius: 20px;
+ right: 30px;
+}
+
+.ordenar :hover{
+  background-color: rgb(255, 255, 255);
+  color :#000000 ;
+  transform: scale(1.5);
+}

@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Concesionaria AutoPlus</title>
   <link rel="stylesheet" href="Estilo/Style.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 </head>
+
 <body>
 
   <!-- Menú lateral -->
@@ -26,19 +28,11 @@
     <details class="submenu">
       <summary>Motos</summary>
       <ul>
-        <li><a href = "Motos.html">Honda</a></li>
-        <li><a href="#yamaha">Yamaha</a></li>
-        <li><a href="#suzuki">Suzuki</a></li>
-        <li><a href="#ktm">KTM</a></li>
-      </ul>
-    </details>
-
-    <details class="submenu">
-      <summary>Repuestos</summary>
-      <ul>
-        <li><a href="#faros">Faros</a></li>
-        <li><a href="#retrovisores">Retrovisores</a></li>
-        <li><a href="#carburadores">Carburadores</a></li>
+        <li><a href="Motos.html">Pulsar</a></li>
+        <li><a href="Yamaha.html">Yamaha</a></li>
+        <li><a href="Suzuki.html">Suzuki</a></li>
+        <li><a href="KTM.html">KTM</a></li>
+        <li><a href="Italika.html">Italika</a></li>
       </ul>
     </details>
 
@@ -53,71 +47,90 @@
   </div>
 
   <!-- Contenido principal -->
-   <button class="toggle-btn" data-title="Opciones" onclick="toggleMenu()">☰</button>
-    <!-- Barra superior fija -->
+  <button class="toggle-btn" data-title="Opciones" onclick="toggleMenu()">☰</button>
+  <!-- Barra superior fija -->
   <div class="BarraMenu">
-  <div class="main-content">
-    <!-- Logo -->
-    <div class="left-side">
-    <a href="index.html">
-    <img src="Img/LogoMoto.png" alt="Logo" style="height: 145px;">
-    </a>
-    </div>
-
-    <!-- Título -->
-    <h1 class="Center">| XF Repuestos y Motos</h1>
-    <!-- Bandas decorativas -->
-    <div class="banda-arcoiris"></div>
-    <div class="banda-arcoiris2"></div>
-
-    <!-- Opciones de usuario -->
-    <ul class="OpcionesUsuario">
-      <li data-title="Perfil">
-        <img src="https://cdn-icons-png.flaticon.com/512/7531/7531708.png" alt="Perfil">
-      </li>
-      <li data-title="Configuración">
-        <img src="https://images.icon-icons.com/3578/PNG/512/settings_configuration_icon_225724.png" alt="Configuración">
-      </li>
-      <li data-title="Compras">
-        <img src="https://gallery.yopriceville.com/var/albums/Free-Clipart-Pictures/Sale-Stickers-PNG/Shopping_Cart_Icon_PNG_Clipart.png?m=1629814077" alt="Carrito">
-      </li>
-    </ul>
-  </div>
-  </div>
-    <!-- Banda de productos -->
-    <section class="banda-productos">
-      <h1 class="Titulo_Centro">Productos en Oferta</h1>
-      <div class="banda-contenedor">
-        <div class="producto">
-          <img src="Img/producto1.jfif" alt="Producto 1">
-          <p>Deportiva CF300</p>
-        </div>
-        <div class="producto">
-          <img src="Img/producto2.jfif" alt="Producto 2">
-          <p>Pulsar 250cc</p>
-        </div>
-        <div class="producto">
-          <img src="Img/producto3.jfif" alt="Producto 3">
-          <p>TVS Rider 125</p>
-        </div>
-        <div class="producto">
-          <img src="Img/producto4.jfif" alt="Producto 4">
-          <p>Yamaha 3.0 159 SF</p>
-        </div>
-        <div class="producto">
-          <img src="Img/producto5.jfif" alt="Producto 5">
-          <p>Italika 250Z Año 2025</p>
-        </div>
-        <div class="producto">
-          <img src="Img/producto6.jfif" alt="Producto 6">
-          <p>Moto Suzuki</p>
-        </div>
-        <div class="producto">
-          <img src="Img/producto7.jfif" alt="Producto 7">
-          <p>Moto Honda</p>
-        </div>
+    <div class="main-content">
+      <!-- Logo -->
+      <div class="left-side">
+        <a href="index.html">
+          <img src="Img/LogoMoto.png" alt="Logo" style="height: 145px;">
+        </a>
       </div>
-    </section>
+
+      <!-- Título -->
+      <h1 class="Center">| XF Repuestos y Motos</h1>
+      <!-- Bandas decorativas -->
+      <div class="banda-arcoiris"></div>
+      <div class="banda-arcoiris2"></div>
+
+      <div class="Busqueda">
+        <input list="sugerencias" id="busqueda" name="busqueda" placeholder="🔍Buscar Productos..." />
+        <datalist id="sugerencias">
+          <option value="Yamaha">
+          <option value="Pulsar">
+          <option value="Suzuki">
+          <option value="KTM">
+          <option value="Italika">
+        </datalist>
+      </div>
+
+      <button class="Buscarr" onclick="buscarProducto()">🔍</button>
+
+
+      <!-- Opciones de usuario -->
+      <ul class="OpcionesUsuario">
+        <li data-title="Perfil">
+          <img src="https://cdn-icons-png.flaticon.com/512/7531/7531708.png" alt="Perfil">
+        </li>
+        <li data-title="Configuración">
+          <img src="https://images.icon-icons.com/3578/PNG/512/settings_configuration_icon_225724.png"
+            alt="Configuración">
+        </li>
+        <li data-title="Compras">
+          <img
+            src="https://gallery.yopriceville.com/var/albums/Free-Clipart-Pictures/Sale-Stickers-PNG/Shopping_Cart_Icon_PNG_Clipart.png?m=1629814077"
+            alt="Carrito">
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- Banda de productos -->
+  <section class="banda-productos">
+    <h1 class="Titulo_Centro">Productos en Oferta</h1>
+    <div class="banda-contenedor">
+      <div class="producto">
+        <a href="Motos.html">
+        <img src="Img/producto2.jfif" alt="Producto 2">
+        <p>Pulsar</p>
+        </a>
+      </div>
+      <div class="producto">
+         <a href="Ktm.html">
+        <img src="https://marcaspremiumuma.com/wp-content/uploads/2023/01/DUKE-200-NG-naranja-02-r.webp" alt="Producto 3">
+        <p>Ktm</p>
+        </a>
+      </div>
+      <div class="producto">
+         <a href="Yamaha.html">
+        <img src="Img/producto4.jfif" alt="Producto 4">
+        <p>Yamaha</p>
+        </a>
+      </div>
+      <div class="producto">
+         <a href="Italika.html">
+        <img src="Img/producto5.jfif" alt="Producto 5">
+        <p>Italika</p>
+        </a>
+      </div>
+      <div class="producto">
+         <a href="Suzuki.html">
+        <img src="Img/producto6.jfif" alt="Producto 6">
+        <p>Suzuki</p>
+        </a>
+      </div>
+    </div>
+  </section>
   </div> <!-- FIN main-content -->
 
   <!-- Carrusel de imágenes (SLIDER) -->
@@ -129,21 +142,25 @@
 
     <div class="slides">
       <div class="slide">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdBKMm1scKOcbM5QM9q4Lx99H7q_DVkp6eMg&s" alt="Imagen 1">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdBKMm1scKOcbM5QM9q4Lx99H7q_DVkp6eMg&s"
+          alt="Imagen 1">
         <a href="Motos.html">
-        <div class="titulo-imagen">Motos</div>
+          <div class="titulo-imagen">Motos</div>
         </a>
       </div>
       <div class="slide">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS6i4KYT-ufa6_BPVHfY6Gju6ExjlsrDWK3g&s" alt="Imagen 2">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS6i4KYT-ufa6_BPVHfY6Gju6ExjlsrDWK3g&s"
+          alt="Imagen 2">
         <div class="titulo-imagen">Servicios</div>
       </div>
       <div class="slide">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjWQam-G0GT5KwLRH1o56F6sUfwWS3pwo2qg&s" alt="Imagen 3">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjWQam-G0GT5KwLRH1o56F6sUfwWS3pwo2qg&s"
+          alt="Imagen 3">
         <div class="titulo-imagen">TIENDAS</div>
       </div>
       <div class="slide">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFJXZNV9477JVhCXqaXwAOW1_ppUqdiSSCeg&s" alt="Imagen 4">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFJXZNV9477JVhCXqaXwAOW1_ppUqdiSSCeg&s"
+          alt="Imagen 4">
         <div class="titulo-imagen">Repuestos</div>
       </div>
     </div>
@@ -167,78 +184,60 @@
     }
   </script>
 
+  <footer class="footer">
+    <div class="footer-contenido">
+      <p>&copy; <span id="año"></span> XF Repuestos y Motos. Todos los derechos reservados.</p>
+      <div class="footer-enlaces">
+        <a href="#">Términos y Condiciones</a>
+        <a href="#">Política de Privacidad</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Insertar automáticamente el año actual
+    document.getElementById("año").textContent = new Date().getFullYear();
+  </script>
+
+
+  <input type="text" id="busqueda" placeholder="Buscar producto...">
+<script>
+  document.getElementById("busqueda").addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+      buscarProducto();
+    }
+  });
+function buscarProducto() {
+  const valor = document.getElementById("busqueda").value.toLowerCase();
+
+  switch (valor) {
+    case "italika":
+      window.location.href = "Italika.html";
+      break;
+    case "pulsar":
+      window.location.href = "Motos.html";
+      break;
+    case "suzuki":
+      window.location.href = "Suzuki.html";
+      break;
+    case "yamaha":
+      window.location.href = "Yamaha.html";
+      break;
+    case "ktm":
+      window.location.href = "KTM.html";
+      break;
+    default:
+       window.location.href = "index.html";
+  }
+}
+
+</script>
+
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
     crossorigin="anonymous"></script>
 
-    <footer class="footer">
-  <div class="footer-contenido">
-    <p>&copy; <span id="año"></span> XF Repuestos y Motos. Todos los derechos reservados.</p>
-    <div class="footer-enlaces">
-      <a href="#">Términos y Condiciones</a>
-      <a href="#">Política de Privacidad</a>
-    </div>
-  </div>
-</footer>
-
-<script>
-  // Insertar automáticamente el año actual
-  document.getElementById("año").textContent = new Date().getFullYear();
-</script>
-
-<div class="Busqueda">
-  <input list="sugerencias" id="busqueda" name="busqueda" placeholder="🔍 Buscar Productos..." />
-  <datalist id="sugerencias">
-    <option value="Yamaha">
-    <option value="Honda">
-    <option value="Suzuki">
-    <option value="Casco integral">
-    <option value="Aceite para motor 4T">
-    <option value="Pastillas de freno">
-    <option value="Llantas Pirelli">
-    <option value="KTM">
-    <option value="Bujía NGK">
-  </datalist>
-</div>
-
- <button class = "Buscarr" onclick="buscarProducto()">🔍</button>
-
-<script>
-  function buscarProducto() {
-    const valor = document.getElementById("busqueda").value.toLowerCase();
-    
-    // Redirección básica según texto ingresado
-    switch (valor) {
-      case "yamaha":
-        window.location.href = "Motos.html";
-        break;
-      case "honda":
-        window.location.href = "Motos.html";
-        break;
-      case "casco integral":
-        window.location.href = "Accesorios.html";
-        break;
-      case "aceite para motor 4t":
-        window.location.href = "Lubricantes.html";
-        break;
-      case "pastillas de freno":
-        window.location.href = "Repuestos.html";
-        break;
-      case "llantas pirelli":
-        window.location.href = "Llantas.html";
-        break;
-      case "ktm":
-        window.location.href = "Motos.html";
-        break;
-      case "bujía ngk":
-        window.location.href = "Repuestos.html";
-        break;
-      default:
-        alert("Producto no encontrado");
-    }
-  }
-</script>
-
-
 </body>
+
 </html>
